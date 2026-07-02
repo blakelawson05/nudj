@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light; }
+
+body {
+  background:
+    radial-gradient(1200px 600px at 100% -10%, #d7f2e7 0%, transparent 55%),
+    radial-gradient(1000px 500px at -10% 10%, #e4f1fb 0%, transparent 50%),
+    #f6fbf9;
+  color: #1f2937;
+  min-height: 100vh;
+}
+
+/* Logical-property friendly: works in both LTR and RTL automatically */
+.card {
+  @apply bg-white/90 backdrop-blur rounded-xl2 shadow-card border border-white;
+}
+.btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-full font-bold px-5 py-2.5 transition active:scale-95;
+}
+.btn-primary { @apply btn bg-brand-500 text-white hover:bg-brand-600; }
+.btn-ghost { @apply btn bg-white text-brand-700 border border-brand-200 hover:bg-brand-50; }
+.chip { @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-sm font-semibold; }
+
+@keyframes pop { 0% { transform: scale(0.6); opacity: 0 } 70% { transform: scale(1.08) } 100% { transform: scale(1); opacity: 1 } }
+.animate-pop { animation: pop .35s ease-out both; }
